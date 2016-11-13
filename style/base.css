@@ -1,0 +1,15 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-container {
+    color: #b3e085
+}
