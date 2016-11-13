@@ -1,0 +1,39 @@
+.nav-icon{
+font-size: 30px;
+}
+
+.wheatless{
+  font-family: 'Pacifico', cursive;
+  font-size:30px;
+}
+
+.locations li:not(:last-of-type){
+  border-right:1px solid #b3e085;
+}
+
+
+.search-container input{
+  padding: 7px 28px 7px 7px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 17px;
+  width: 160px;
+  margin-left: 10px;
+  font-style: italic;
+  box-sizing: border-box;
+}
+
+
+.search-container .fa-search{
+  position:absolute;
+  top: 10px;
+  right: 6px;
+  color: #bfbfbf;
+}
+
+.form-control{
+  position:relative;
+}
+
+.locations li{
+  padding: 1px 9px;
+}
