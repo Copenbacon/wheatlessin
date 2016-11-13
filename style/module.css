@@ -1,39 +1,84 @@
-.nav-icon{
-font-size: 30px;
+.nav-icon {
+    font-size: 30px;
 }
 
-.wheatless{
-  font-family: 'Pacifico', cursive;
-  font-size:30px;
+.navigation-items a {
+    color: #b3e085;
 }
 
-.locations li:not(:last-of-type){
-  border-right:1px solid #b3e085;
+.wheatless {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
 }
 
-
-.search-container input{
-  padding: 7px 28px 7px 7px;
-  border-bottom: 1px solid #e0e0e0;
-  font-size: 17px;
-  width: 160px;
-  margin-left: 10px;
-  font-style: italic;
-  box-sizing: border-box;
+.locations li:not(:last-of-type) {
+    border-right: 1px solid #b3e085;
 }
 
-
-.search-container .fa-search{
-  position:absolute;
-  top: 10px;
-  right: 6px;
-  color: #bfbfbf;
+.search-container input {
+    padding: 7px 28px 7px 7px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 17px;
+    width: 160px;
+    margin-left: 10px;
+    font-style: italic;
+    box-sizing: border-box;
+    outline: none;
 }
 
-.form-control{
-  position:relative;
+.search-container .fa-search {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    color: #bfbfbf;
 }
 
-.locations li{
-  padding: 1px 9px;
+.form-control {
+    position: relative;
+}
+
+.locations li {
+    padding: 1px 9px;
+}
+
+@media screen and (min-width:760px) {
+    .nav-icon {
+        display: none;
+    }
+    .navigation-items {
+        display: flex;
+        justify-content: center;
+    }
+    .navigation-items ul {
+        display: block;
+    }
+    .navigation-items ul li {
+        display: inline-block;
+        padding: 10px 15px;
+    }
+    .wheatless {
+        font-size: 70px;
+        padding-right: 10px;
+    }
+    .search-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+    }
+    .search-container input {
+        padding: 20px 28px 7px 7px;
+    }
+    .navigation-items a:hover {
+        color: gray;
+    }
+    .locations li {
+        padding: 1px 35px;
+    }
+
+}
+
+.main-container {
+    color: #b3e085
 }

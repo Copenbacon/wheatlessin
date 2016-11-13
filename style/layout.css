@@ -1,28 +1,28 @@
-.navigation-items{
-  display:none;
-  text-align: center;
+.navigation-items {
+    display: none;
+    text-align: center;
 }
 
-
-.navigation{
-  display:flex;
-  flex-direction: column;
+.navigation {
+    display: flex;
+    flex-direction: column;
 }
-.nav-icon{
-  margin-left: auto;
+
+.nav-icon {
+    margin-left: auto;
 }
 
 .locations {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  height:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
 }
 
-.search-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
 }
