@@ -4,10 +4,10 @@ $(document).ready(function(){
     $('.navigation-items').toggle('slow');
   });
 });
-
 function compileHandlebars(template) {
-  var restaurant = Handlebars.compile($(template).text());
-  return restaurant;
+  console.log(businessesArray);
+  businessesArray.forEach( function(element) {
+    var business = Handlebars.compile($(template).text());
+    return business(element);
+  });
 }
-
-$('.search-container').append(compileHandlebars('#restaurants-template'));
