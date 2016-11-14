@@ -8,6 +8,8 @@ function initMap() {
     zoom: 10
   });
 
+  $('#map').hide();
+
   var form = document.getElementById('form-control');
   form.addEventListener('submit',function(e){
     e.preventDefault();
@@ -32,11 +34,11 @@ function initMap() {
             lng:e.location.coordinate.longitude
           };
           var marker = new google.maps.Marker({
-            position: coordinates ,
-            map: map,
+            position: coordinates,
+            map: map
           });
         });
-        $('#results').append(compileHandlebars('#restaurants-template'));
+        $('#results').empty().append(compileHandlebars('#restaurants-template'));
       }
     });
   });
