@@ -9,16 +9,3 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
-
-#background {
-    content: url('../imgs/white-brick-wallpaper.jpg');
-    position: fixed;
-    display: inline;
-    width: 100%;
-    z-index: -1;
-}
-
-#map{
-  height: 400px;
-  width: 400px;
-}
