@@ -16,15 +16,21 @@ function initMap() {
       method:'GET',
       url:'http://localhost:3000/api?category_filter=gluten_free&location=' + e.target.name.value,
       success:function(data){
+        businessesArray = [];
         data.businesses.forEach(function(element){
           console.log(element.location.coordinate);
           // console.log(element);
           businessesArray.push(element);
+        });
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: businessesArray[0].location.coordinate.latitude, lng: businessesArray[0].location.coordinate.longitude},
+          zoom: 10
+        });
+        businessesArray.forEach(function(e){
           var coordinates = {
-            lat:element.location.coordinate.latitude,
-            lng:element.location.coordinate.longitude
+            lat:e.location.coordinate.latitude,
+            lng:e.location.coordinate.longitude
           };
-          console.log(coordinates);
           var marker = new google.maps.Marker({
             position: coordinates ,
             map: map,
@@ -33,4 +39,4 @@ function initMap() {
       }
     });
   });
-}
+};
