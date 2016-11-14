@@ -1,9 +1,11 @@
 'use strict';
+var businessesArray = [];
+
 function initMap() {
         // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 47.5648, lng: -122.38655},
-    zoom: 8
+    zoom: 10
   });
 
   var form = document.getElementById('form-control');
@@ -16,6 +18,8 @@ function initMap() {
       success:function(data){
         data.businesses.forEach(function(element){
           console.log(element.location.coordinate);
+          // console.log(element);
+          businessesArray.push(element);
           var coordinates = {
             lat:element.location.coordinate.latitude,
             lng:element.location.coordinate.longitude
