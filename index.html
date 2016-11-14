@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="style/layout.css">
     <link rel="stylesheet" href="style/module.css">
 
+    <script id="restaurants-template" type="text/x-handlebars-template"></script>
+    <article class="restaurant-display">
+      <img src="{{image_url}}">
+      <a href="{{url}}"><h3>{{name}}</h3></a>
+      <p>{{address1}}</p>
+      <p>{{is_closed}}</p>
+      <h3>{{rating}} + " /5"</h3>
+    </article>
+
 </head>
 
 <body>
@@ -127,9 +136,10 @@
         </footer>
     </div>
     <!-- SCRIPT CDN VENDOR TAGS -->
-    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIeBMwXgDtmiCPapLgQ7X7KsuaEXKXIk4&callback=initMap"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.amd.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIeBMwXgDtmiCPapLgQ7X7KsuaEXKXIk4&callback=initMap"></script>
     <script type="text/javascript" src="js/view/app.js"></script>
     <script type="text/javascript" src="js/model/mapView.js"></script>
     <script type="text/javascript" src="js/controller/routesController.js"></script>
