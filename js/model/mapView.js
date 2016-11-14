@@ -36,7 +36,7 @@ function initMap() {
             map: map,
           });
         });
-        $('.search-container').append(compileHandlebars('#restaurants-template'));
+        $('#results').append(compileHandlebars('#restaurants-template'));
       }
     });
   });
