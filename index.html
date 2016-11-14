@@ -16,9 +16,9 @@
       <article class="restaurant-display">
         <img src="{{image_url}}">
         <a href="{{url}}"><h3>{{name}}</h3></a>
-        <p>{{address1}}</p>
+        <p>{{location.display_address}} </p>
         <p>{{is_closed}}</p>
-        <h3>{{rating}} + " /5"</h3>
+        <h3>{{rating}}/5</h3>
       </article>
     </script>
 </head>
@@ -37,7 +37,7 @@
             </div>
         </header>
         <!-- HOME -->
-        <section class="search-container">
+        <section class="search-container" id="search-section">
             <span class="wheatless">Wheatless in </span>
             <div class="form-control">
               <form id="form-control">
@@ -46,9 +46,11 @@
               </form>
             </div>
         </section>
+        <div id="map"></div>
+        <section id="results"></section>
         <!-- HOME END-->
         <!-- ABOUT US -->
-        <section class="about-us">
+        <section class="about-us" id="about-section">
           <header id="about-us">About Us</header>
             <div id="who-we-are">
               <h1>Who We are</h1>
@@ -123,9 +125,7 @@
         </section>
       </div>
         <!-- ABOUT US END-->
-        <section>
-          <div id="map"></div>
-        </section>
+        <section></section>
         <section></section>
         <footer>
             <ul class="locations">
