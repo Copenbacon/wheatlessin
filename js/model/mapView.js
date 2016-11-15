@@ -26,6 +26,7 @@ function initMap() {
         $('#infoDisplay').show();
         $('#results').empty().append(compileHandlebars('#restaurants-template'));
         renderResultsMap();
+        listItem();
       }
     });
   });
@@ -41,10 +42,23 @@ var renderResultsMap = function() {
     var coordinates = {
       lat:e.location.coordinate.latitude,
       lng:e.location.coordinate.longitude
+      // console.log(e);
     };
+    if(!contentString){
+      var contentString ='<div class="content">' +
+          '<a href='+e.url+'>' + e.name + ' </a>'+ '<br>' + '<p>' + e.location.display_address+'<p>'+'</div>';
+
+    }
+
+    var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
     var marker = new google.maps.Marker({
       position: coordinates,
       map: map
     });
+    marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
   });
 };
