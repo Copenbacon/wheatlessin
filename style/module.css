@@ -140,6 +140,21 @@
 }
 
 #map {
-    height: 400px;
-    width: 400px;
+  height: 400px;
+  width: 400px;
+}
+
+div #mapTwo {
+  width: 40%;
+  height: 50%;
+  position: absolute !important;
+  right: 2%;
+}
+
+.restaurant-display {
+  width: 50%;
+}
+
+.restaurant-display:hover {
+  background-color: rgba(39, 116, 196, 0.71);
 }

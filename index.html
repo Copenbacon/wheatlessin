@@ -17,7 +17,7 @@
     <script id="restaurants-template" type="text/x-handlebars-template">
       <article class="restaurant-display">
         <img src="{{image_url}}">
-        <a href="{{url}}"><h3>{{name}}</h3></a>
+        <h3><a href="{{url}}">{{name}}</a></h3>
         <p>{{location.display_address}} </p>
         <p>{{is_closed}}</p>
         <h3>{{rating}}/5</h3>
@@ -54,6 +54,7 @@
           <a href="/list">list</a>
           <a href="/map">map</a>
           <div id="map"></div>
+          <div id="mapTwo"></div>
           <section id="results"></section>
         </div>
         <!-- HOME END-->
