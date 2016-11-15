@@ -26,6 +26,7 @@ function initMap() {
         $('#infoDisplay').show();
         $('#results').empty().append(compileHandlebars('#restaurants-template'));
         renderResultsMap();
+        listItem();
       }
     });
   });
