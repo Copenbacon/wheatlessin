@@ -7,7 +7,7 @@ function initMap() {
     center: {lat: 47.5648, lng: -122.38655},
     zoom: 10
   });
-
+  $('#infoDisplay').hide();
   $('#map').hide();
 
   var form = document.getElementById('form-control');
@@ -42,6 +42,7 @@ function initMap() {
             map: map
           });
         });
+        $('#infoDisplay').show();
         $('#results').empty().append(compileHandlebars('#restaurants-template'));
       }
     });
