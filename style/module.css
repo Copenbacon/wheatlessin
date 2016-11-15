@@ -43,7 +43,9 @@
 
 @media screen and (min-width:760px) {
     .nav-icon {
-        display: none;
+        color: black;
+        padding-top: 5px;
+        padding-right: 10px;
     }
     .navigation-items {
         display: flex;
