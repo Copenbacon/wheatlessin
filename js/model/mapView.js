@@ -22,7 +22,11 @@ function initMap() {
         data.businesses.forEach(function(element){
           console.log(element.location.coordinate);
           // console.log(element);
-          businessesArray.push(element);
+          var trueLocations = data.businesses.filter(function(ele){
+            return ele.location.coordinate;
+          });
+          businessesArray = trueLocations;
+          console.log(businessesArray, 'businessesArray');
         });
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: businessesArray[0].location.coordinate.latitude, lng: businessesArray[0].location.coordinate.longitude},
