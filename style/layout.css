@@ -43,6 +43,14 @@
   width: 40px;
 }
 
+#linkedinIcon {
+  width: 20px;
+}
+
+#githubIcon {
+  width: 20px;
+}
+
 .search-container {
     display: flex;
     flex-direction: column;
