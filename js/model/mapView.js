@@ -1,6 +1,6 @@
 'use strict';
 var businessesArray = [];
-
+var myInfowindows = [];
 $('#map').hide();
 function initMap() {
         // Create a map object and specify the DOM element for display.
@@ -8,6 +8,8 @@ function initMap() {
   var form = document.getElementById('form-control');
   form.addEventListener('submit',function(e){
     e.preventDefault();
+    $('#mapTwo').hide();
+    afterSearch();
     console.log(e.target.name.value);
     $.ajax({
       method:'GET',
@@ -58,9 +60,14 @@ var renderResultsMap = function() {
       position: coordinates,
       map: map
     });
+    myInfowindows.push(infowindow);
 
     marker.addListener('click', function() {
+      myInfowindows.forEach(function(myInfoWindow) {
+        myInfoWindow.close();
+      });
       infowindow.open(map, marker);
     });
+    return marker;
   });
 };
