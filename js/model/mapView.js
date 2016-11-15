@@ -2,13 +2,13 @@
 var businessesArray = [];
 var myInfowindows = [];
 $('#map').hide();
+$('#mapTwo').hide();
 function initMap() {
         // Create a map object and specify the DOM element for display.
   $('#infoDisplay').hide();
   var form = document.getElementById('form-control');
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    $('#mapTwo').hide();
     afterSearch();
     console.log(e.target.name.value);
     $.ajax({
@@ -25,6 +25,8 @@ function initMap() {
           businessesArray = trueLocations;
           console.log(businessesArray, 'businessesArray');
         });
+        $('#mapTwo').show();
+        renderSingleResultMap('0');
         $('#infoDisplay').show();
         $('#results').empty().append(compileHandlebars('#restaurants-template'));
         renderResultsMap();
@@ -37,7 +39,7 @@ function initMap() {
 var renderResultsMap = function() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: businessesArray[0].location.coordinate.latitude, lng: businessesArray[0].location.coordinate.longitude},
-    zoom: 10
+    zoom: 12
   });
 
   businessesArray.forEach(function(e){
