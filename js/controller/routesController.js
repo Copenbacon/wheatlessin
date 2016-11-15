@@ -14,6 +14,7 @@ function showList() {
 }
 
 function showMap() {
-  $('#map').show();
   $('#results').hide();
+  $('#map').show();
+  renderResultsMap();
 }
