@@ -24,4 +24,17 @@ var renderSingleResultMap = function(e) {
     map: map
   });
 
+  if(!contentString){
+    var contentString = '<div class="content">' +
+        '<a href=' + businessesArray[e].url + '>' + businessesArray[e].name + ' </a>' + '<br>' + '<p>' + businessesArray[e].location.display_address + '<p>' + '</div>';
+
+  }
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
 };
