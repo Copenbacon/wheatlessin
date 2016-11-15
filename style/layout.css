@@ -24,6 +24,25 @@
     justify-content: center;
 }
 
+#socialIcons {
+  display: flex;;
+  justify-content: center;
+}
+
+#facebook-icon {
+  width: 40px;
+}
+
+#instagram-icon {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 40px;
+}
+
+#snapchat-icon {
+  width: 40px;
+}
+
 .search-container {
     display: flex;
     flex-direction: column;
