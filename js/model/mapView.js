@@ -45,20 +45,22 @@ var renderResultsMap = function() {
       // console.log(e);
     };
     if(!contentString){
-      var contentString ='<div class="content">' +
-          '<a href='+e.url+'>' + e.name + ' </a>'+ '<br>' + '<p>' + e.location.display_address+'<p>'+'</div>';
+      var contentString = '<div class="content">' +
+          '<a href=' + e.url + '>' + e.name + ' </a>' + '<br>' + '<p>' + e.location.display_address + '<p>' + '</div>';
 
     }
 
     var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });
+      content: contentString
+    });
+
     var marker = new google.maps.Marker({
       position: coordinates,
       map: map
     });
+
     marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
+      infowindow.open(map, marker);
+    });
   });
 };
