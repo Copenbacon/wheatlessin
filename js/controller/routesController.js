@@ -20,6 +20,7 @@ function showList() {
 
 function showMap() {
   $('#results').hide();
+  $('#mapTwo').hide();
   $('#map').show();
   renderResultsMap();
 }
