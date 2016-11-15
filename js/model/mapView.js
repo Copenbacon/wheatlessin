@@ -8,6 +8,7 @@ function initMap() {
   var form = document.getElementById('form-control');
   form.addEventListener('submit',function(e){
     e.preventDefault();
+    afterSearch();
     console.log(e.target.name.value);
     $.ajax({
       method:'GET',
