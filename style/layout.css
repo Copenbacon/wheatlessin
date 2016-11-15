@@ -19,6 +19,11 @@
     height: 200px;
 }
 
+#copyright {
+    display: flex;
+    justify-content: center;
+}
+
 .search-container {
     display: flex;
     flex-direction: column;
