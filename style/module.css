@@ -12,7 +12,7 @@
 }
 
 .locations li:not(:last-of-type) {
-    border-right: 1px solid #b3e085;
+    border-right: 2px solid black;
 }
 
 .search-container input {
@@ -28,7 +28,7 @@
 
 .search-container .fa-search {
     position: absolute;
-    top: 10px;
+    top: 23px;
     right: 6px;
     color: #bfbfbf;
 }
@@ -43,13 +43,22 @@
 
 @media screen and (min-width:760px) {
     .nav-icon {
-        color: black;
-        padding-top: 5px;
-        padding-right: 10px;
+        display: none;
+    }
+    .navigation {
+        background-color: white;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        font-size: 30px;
+        font-family: pacifico;
+        margin-right: auto;
     }
     .navigation-items {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
     }
     .navigation-items ul {
         display: block;
@@ -65,42 +74,72 @@
     .search-container {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        /*justify-content: center;*/
         align-items: center;
-        height: 300px;
+        height: 120px;
+        width: 640px;
+        margin: 274px auto 190px auto;
+        border-radius: 100px;
+        background-color: rgba(255, 255, 255, .5);
     }
     .search-container input {
         padding: 20px 28px 7px 7px;
         background-color: transparent;
     }
+    .navigation-items a {
+        padding: 20px 15px;
+        display: block;
+        margin-right: 10px;
+        ;
+    }
+    .navigation-items a:focus {
+        background-color: #daecc8;
+        color: #98bf70;
+        border-radius: 3px;
+    }
     .navigation-items a:hover {
-        color: gray;
+        background-color: #daecc8;
+        color: #98bf70;
+        border-radius: 3px;
     }
     .locations li {
         padding: 1px 35px;
     }
+    #background {
+        background-image: url('../imgs/white-brick-wallpaper.jpg');
+        position: absolute;
+        background-position: 0 72px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 800px;
+        /*top:0;*/
+        /*left:0;*/
+        /*right:0;*/
+        display: inline;
+        width: 100%;
+        z-index: -1;
+    }
+    #about-section {
+        background-color: white;
+        position: relative;
+        top: 230px;
 
+    }
+    .about-us{
+      max-width: 980px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+    }
+    .teamsection{
+      padding: 10px;
+    }
 }
 
 .main-container {
     color: #b3e085
 }
 
-#background {
-    background-image: url('../imgs/white-brick-wallpaper.jpg');
-    position: absolute;
-    background-position: center;
-    background-size: 100%;
-    height:800px;
-    /*top:0;*/
-    /*left:0;*/
-    /*right:0;*/
-    display: inline;
-    width: 100%;
-    z-index: -1;
-}
-
-#map{
-  height: 400px;
-  width: 400px;
+#map {
+    height: 400px;
+    width: 400px;
 }
