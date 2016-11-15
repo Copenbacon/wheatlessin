@@ -37,7 +37,7 @@ function initMap() {
 var renderResultsMap = function() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: businessesArray[0].location.coordinate.latitude, lng: businessesArray[0].location.coordinate.longitude},
-    zoom: 10
+    zoom: 12
   });
 
   businessesArray.forEach(function(e){

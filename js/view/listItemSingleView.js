@@ -11,7 +11,7 @@ function listItem() {
 var renderSingleResultMap = function(e) {
   var map = new google.maps.Map(document.getElementById('mapTwo'), {
     center: {lat: businessesArray[e].location.coordinate.latitude, lng: businessesArray[e].location.coordinate.longitude},
-    zoom: 15
+    zoom: 18
   });
 
   var coordinates = {

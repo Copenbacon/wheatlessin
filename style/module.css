@@ -140,8 +140,11 @@
 }
 
 #map {
-  height: 400px;
-  width: 400px;
+  height: 40em;
+  width: 40em;
+  margin: auto;
+  border: solid 1em rgb(70, 76, 134);
+  border-radius: 2%;
 }
 
 div #mapTwo {
@@ -149,10 +152,23 @@ div #mapTwo {
   height: 50%;
   position: absolute !important;
   right: 2%;
+  border: solid .25em rgb(70, 76, 134);
+  border-radius: 15px;
+}
+
+.restaurant-display img{
+  float: left;
 }
 
 .restaurant-display {
-  width: 50%;
+  width: 45%;
+  background-color: rgba(91, 91, 91, 0.79);
+  border: solid .125em black;
+  border-radius: 2.5%;
+  margin-bottom: 1%;
+  margin-left: 2%;
+  padding: 1%;
+  text-align: center;
 }
 
 .restaurant-display:hover {
