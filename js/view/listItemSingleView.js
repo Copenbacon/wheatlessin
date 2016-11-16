@@ -6,6 +6,26 @@ function listItem() {
     $('#mapTwo').show();
     renderSingleResultMap(index);
   });
+
+  $('.comment-button').on('click', function(e){
+    e.stopPropagation();
+    e.preventDefault();
+    var data = e.target.dataset;
+    var buttonId = data.businessId;
+    console.log(this);
+    console.log(buttonId);
+    // console.log(e.target.dataset)
+    if(data && data.businessId) {
+      var restaurantId = data.businessId
+      var userName = "Chaimae";
+      var input = $('#' + buttonId).val();
+      var comment = input;
+      // generate unique comment ID so that we don't try to insert a comment using an ID that already exists
+      var newCommentId = firebase.database().ref().child('restaurants').child(restaurantId).child('comments').push().key;
+      addComment(restaurantId, userName, comment, newCommentId);
+      getComments(restaurantId);
+    }
+  })
 }
 
 var renderSingleResultMap = function(e) {
