@@ -14,11 +14,17 @@ function showAboutUs() {
 };
 
 function showList() {
+  $('#mapSelector').removeClass('current');
+  $('#listSelector').addClass('current');
   $('#results').show();
   $('#map').hide();
+  $('#mapTwo').show();
+  renderSingleResultMap('0');
 }
 
 function showMap() {
+  $('#listSelector').removeClass('current');
+  $('#mapSelector').addClass('current');
   $('#results').hide();
   $('#mapTwo').hide();
   $('#map').show();

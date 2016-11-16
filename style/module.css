@@ -15,6 +15,35 @@
     border-right: 2px solid black;
 }
 
+#mapListSelectorDiv{
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+#mapListSelectorDiv a{
+  margin: -.25%;
+  padding: .75%;
+}
+
+.mapListSelector {
+  background-color: rgb(207, 207, 207);
+  border: 1px solid rgb(207, 207, 207);
+  color: black;
+  text-align: center;
+}
+
+.mapListSelector:hover {
+  background-color: rgb(130, 130, 130);
+}
+
+.current {
+  background-color: rgb(130, 130, 130);
+  padding: 0.5%;
+  border: 1px solid rgb(207, 207, 207);
+  color: black;
+}
+
 .search-container input {
     padding: 7px 28px 7px 7px;
     border-bottom: 1px solid #e0e0e0;
@@ -42,8 +71,8 @@
 }
 
 #map {
-  height: 40em;
-  width: 40em;
+  height: 500px;
+  width: 85%;
   margin: auto;
   border: solid 1em rgb(70, 76, 134);
   border-radius: 2%;
@@ -74,7 +103,26 @@ div #mapTwo {
   background-color: rgba(39, 116, 196, 0.71);
 }
 
+
+@media screen and (min-width: 500px){
+  #map {
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    border: solid 1em rgb(70, 76, 134);
+    border-radius: 2%;
+  }
+}
+
 @media screen and (min-width:760px) {
+
+  #map {
+    height: 600px;
+    width: 600px;
+    margin: auto;
+    border: solid 1em rgb(70, 76, 134);
+    border-radius: 2%;
+  }
 
   .restaurant-display img{
     float: left;

@@ -60,8 +60,10 @@
                 </div>
             </section>
             <div id="infoDisplay">
-                <a href="/list">list</a>
-                <a href="/map">map</a>
+              <div id="mapListSelectorDiv">
+              <a href="/list" class="mapListSelector" id="listSelector">list</a>
+              <a href="/map" class="mapListSelector" id="mapSelector">map</a>
+              </div>
                 <div id="map"></div>
                 <div id="mapTwo"></div>
                 <section id="results"></section>
@@ -173,6 +175,7 @@
     </div>
     </div>
     <!-- SCRIPT CDN VENDOR TAGS -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
