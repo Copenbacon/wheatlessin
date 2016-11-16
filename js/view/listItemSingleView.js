@@ -16,16 +16,22 @@ function listItem() {
     console.log(buttonId);
     // console.log(e.target.dataset)
     if(data && data.businessId) {
-      var restaurantId = data.businessId
-      var userName = "Chaimae";
-      var input = $('#' + buttonId).val();
+      var restaurantId = data.businessId;
+      var userName = $('#' + buttonId + 'name').val();
+      var input = $('#' + buttonId + 'comment').val();
+      $('#' + buttonId + 'comment').val('');
+      $('#' + buttonId + 'name').val('');
       var comment = input;
       // generate unique comment ID so that we don't try to insert a comment using an ID that already exists
       var newCommentId = firebase.database().ref().child('restaurants').child(restaurantId).child('comments').push().key;
       addComment(restaurantId, userName, comment, newCommentId);
       getComments(restaurantId);
     }
-  })
+    firebase.database().ref('restaurants/').on('child_added', function() {
+      var dataSearch = firebase.database().ref('restaurants/' + restaurantId + '/comments').orderByChild('comments');
+      console.log(dataSearch);
+    });
+  });
 }
 
 var renderSingleResultMap = function(e) {
