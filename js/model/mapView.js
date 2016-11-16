@@ -13,7 +13,7 @@ function initMap() {
     console.log(e.target.name.value);
     $.ajax({
       method:'GET',
-      url:'http://localhost:3000/api?category_filter=gluten_free&location=' + e.target.name.value,
+      url: window.location.origin + '/api?category_filter=gluten_free&location=' + e.target.name.value,
       success:function(data){
         businessesArray = [];
         data.businesses.forEach(function(element){

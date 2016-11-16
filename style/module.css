@@ -15,6 +15,62 @@
     border-right: 2px solid black;
 }
 
+#about-section {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+}
+
+#about-section div {
+  margin: 2% auto;
+}
+
+#team {
+  background-color: #7d7a7a;
+  border-radius: 30px;
+  padding: 5%;
+}
+
+#who-we-are{
+  background-color: #7d7a7a;
+  border-radius: 30px;
+  padding: 5%;
+}
+
+#faq{
+  background-color: #7d7a7a;
+  border-radius: 30px;
+  padding: 5%;
+}
+
+#team h4{
+  font-weight: bold;
+  margin: 1%;
+}
+
+#gfreelogo{
+    margin: 1.5%;
+}
+
+.teamsection {
+  background-color: rgba(12, 96, 138, 0.71);
+  border-radius: 30px;
+  padding: 2%;
+  margin: 2%;
+}
+
+.teamsection h3{
+  text-decoration: underline;
+}
+
+.item {
+  margin: 5%;
+}
+
+footer{
+  margin-top: 5%;
+}
+
 #mapListSelectorDiv{
   margin: 0 auto;
   text-align: center;
@@ -74,7 +130,7 @@
   height: 500px;
   width: 85%;
   margin: auto;
-  border: solid 1em rgb(70, 76, 134);
+  border: solid .25em #b3e085;
   border-radius: 2%;
 }
 
@@ -103,26 +159,16 @@ div #mapTwo {
   background-color: rgba(39, 116, 196, 0.71);
 }
 
-
 @media screen and (min-width: 500px){
   #map {
-    height: 400px;
-    width: 400px;
+    max-height: 40%;
+    max-width: 40%;
     margin: auto;
-    border: solid 1em rgb(70, 76, 134);
     border-radius: 2%;
   }
 }
 
 @media screen and (min-width:760px) {
-
-  #map {
-    height: 600px;
-    width: 600px;
-    margin: auto;
-    border: solid 1em rgb(70, 76, 134);
-    border-radius: 2%;
-  }
 
   .restaurant-display img{
     float: left;
@@ -177,7 +223,6 @@ div #mapTwo {
       padding: 20px 15px;
       display: block;
       margin-right: 10px;
-      ;
   }
   .navigation-items a:focus {
       background-color: #daecc8;
@@ -207,7 +252,6 @@ div #mapTwo {
       z-index: -1;
   }
   #about-section {
-      background-color: white;
       position: relative;
       top: 230px;
 
