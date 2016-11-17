@@ -60,7 +60,7 @@
 }
 
 .profPic {
-  width: 30%;
+  width: 70%;
 }
 
 .teamsection h3{
@@ -170,6 +170,10 @@ div #mapTwo {
     max-width: 40%;
     margin: auto;
     border-radius: 2%;
+  }
+
+  .profPic {
+    width: 30%;
   }
 }
 
