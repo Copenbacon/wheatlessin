@@ -59,6 +59,10 @@
   margin: 2%;
 }
 
+.profPic {
+  width: 30%;
+}
+
 .teamsection h3{
   text-decoration: underline;
 }
