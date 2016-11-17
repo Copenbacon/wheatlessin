@@ -6,6 +6,8 @@
     <title>Wheatlessin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.fontawesome.com/2866858701.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="style/base.css">
@@ -14,19 +16,41 @@
     <!-- FAVICON TAG -->
     <link rel="shortcut icon" type="image/x-icon" href="imgs/wheatlessin.ico">
 
+    <!-- Latest compiled and minified JavaScript -->
     <script id="restaurants-template" type="text/x-handlebars-template">
         <article class="restaurant-display">
-            <img src="{{image_url}}">
+            <img src="{{image_url}}" class="img-thumbnail">
             <h3><a href="{{url}}">{{name}}</a></h3>
             <p>{{location.display_address}} </p>
             <p>{{display_phone}}</p>
             <h3>Rating: {{rating}}/5</h3>
-            <button class="comment-button" data-business-id="{{id}}">Comment</button>
-            <form>
-              <input type="text" name="name" id="{{id}}name">
-              <input type="text" name="name" id="{{id}}comment">
-            </form>
+            <button class="show-comments btn btn-primary" type="button" data-show-comments="{{id}}">
+              <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+              {{#if commentsCount}}<span class="badge">{{commentsCount}}</span>{{/if}}
+            </button>
+            <button class="add-comment btn btn-primary" type="button" data-add-comment="{{id}}">
+              Add Comment
+            </button>
+            <div id="{{id}}-comment-form" class="comment-form">
+              <form>
+                <div class="form-control">
+                  <input type="text" name="name" id="{{id}}name" placeholder="Your name">
+                </div>
+                <textarea class="form-control" type="text" name="name" id="{{id}}comment" placeholder="Your comment..."></textarea>
+              </form>
+              <button class="comment-button btn btn-primary" data-business-id="{{id}}">Submit Comment</button>
+            </div>
+            <div id="{{id}}-comments" class="comments">
+              {{#each comments}}
+              <div class="comment">
+                <span class="comment-author">By: {{username}}</span>
+                <p class="comment-message">Comment: {{comment}}</p>
+              </div>
+              {{/each}}
+            </div>
+
         </article>
+
     </script>
 
     <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
@@ -53,7 +77,7 @@
             <!-- HOME -->
             <section class="search-container" id="search-section">
                 <span class="wheatless">Wheatless in</span>
-                <div class="form-control">
+                <div class="search-form-control">
                     <form id="form-control">
                         <input type="text" name="name" value="" placeholder="Seattle">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -184,11 +208,11 @@
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIeBMwXgDtmiCPapLgQ7X7KsuaEXKXIk4&callback=initMap"></script>
+    <script type="text/javascript" src="js/controller/restaurantListController.js"></script>
     <script type="text/javascript" src="js/model/mapView.js"></script>
     <script type="text/javascript" src="js/view/app.js"></script>
     <script type="text/javascript" src="js/controller/routesController.js"></script>
     <script type="text/javascript" src="js/controller/routes.js"></script>
-    <script type="text/javascript" src="js/controller/restaurantListController.js"></script>
     <script type="text/javascript" src="js/view/afterSearch.js"></script>
     <script type="text/javascript" src='js/view/listItemSingleView.js'></script>
 

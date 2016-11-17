@@ -1,6 +1,8 @@
 'use strict';
 var Yelp = require('yelp');
 var express = require('express'),
+  path = require('path'),
+
   port = process.env.PORT || 3000,
   app = express();
 
@@ -15,7 +17,6 @@ var yelp = new Yelp({
 
 
 app.use(express.static('./'));
-
 
 app.get('/api', function(request, response) {
   // console.log('New request:', request.url);
@@ -35,6 +36,17 @@ app.get('/api', function(request, response) {
     console.error(err);
   });
 });
+
+
+
+
+app.get('*', function(request, response){
+  response.sendFile(path.join(__dirname + '/index.html'));
+});
+
+
+
+
 
 app.listen(port, function() {
   console.log('Server started on port ' + port + '!');

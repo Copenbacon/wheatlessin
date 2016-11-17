@@ -118,7 +118,7 @@ footer{
     color: #bfbfbf;
 }
 
-.form-control {
+.seatch-form-control {
     position: relative;
 }
 
@@ -269,3 +269,22 @@ div #mapTwo {
 .main-container {
     color: #b3e085
 }
+
+.comment-form {
+  display: none;
+}
+
+.comment-form.active {
+  display: block;
+}
+
+.comments {
+  display: none;
+}
+.comments.active {
+  display: block;
+}
+.comment {}
+.comment.active {}
+.comment-author {}
+.comment-message {}
