@@ -1,11 +1,25 @@
 'use strict';
 function listItem() {
-  $('.restaurant-display').on('click', function(){
+  $('.restaurant-display').on('click', function(e){
+    e.stopPropagation();
     var index = $(this).index();
     console.log(index, 'index of this element');
     $('#mapTwo').show();
     renderSingleResultMap(index);
   });
+
+  $('.show-comments').on('click', function(e){
+    e.stopPropagation();
+    var buttonId = $(this).data('show-comments');
+    $('#' + buttonId + '-comments').toggleClass('active');
+  });
+
+  $('.add-comment').on('click', function(e){
+    e.stopPropagation();
+    var buttonId = $(this).data('add-comment');
+    $('#'+ buttonId + '-comment-form').toggleClass('active');
+  });
+
 
   $('.comment-button').on('click', function(e){
     e.stopPropagation();
@@ -25,12 +39,14 @@ function listItem() {
       // generate unique comment ID so that we don't try to insert a comment using an ID that already exists
       var newCommentId = firebase.database().ref().child('restaurants').child(restaurantId).child('comments').push().key;
       addComment(restaurantId, userName, comment, newCommentId);
-      getComments(restaurantId);
+      // getComments(restaurantId).then(function(result){
+      //   console.log(result.val());
+      // })
     }
-    firebase.database().ref('restaurants/').on('child_added', function() {
-      var dataSearch = firebase.database().ref('restaurants/' + restaurantId + '/comments').orderByChild('comments');
-      console.log(dataSearch);
-    });
+    // firebase.database().ref('restaurants/').on('child_added', function() {
+    //   var dataSearch = firebase.database().ref('restaurants/' + restaurantId + '/comments').orderByChild('comments');
+    //   console.log(dataSearch);
+    // });
   });
 }
 

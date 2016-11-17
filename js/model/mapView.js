@@ -16,20 +16,42 @@ function initMap() {
       url: window.location.origin + '/api?category_filter=gluten_free&location=' + e.target.name.value,
       success:function(data){
         businessesArray = [];
-        data.businesses.forEach(function(element){
-          console.log(element.location.coordinate);
-          var trueLocations = data.businesses.filter(function(ele){
-            return ele.location.coordinate;
-          });
-          businessesArray = trueLocations;
+        var trueLocations = data.businesses.filter(function(ele){
+          return ele.location.coordinate;
         });
-        $('#infoDisplay').show();
-        $('#results').empty().append(compileHandlebars('#restaurants-template'));
-        renderResultsMap();
-        listItem();
-        if (window.location.pathname !== '/map') {
-          showList();
-        };
+
+        getRestaurants().then(function(results){
+          console.log(results.val());
+          if (results.val()){
+            var databaseRestaurants = results.val();
+            trueLocations.forEach(function(ele){
+              if(databaseRestaurants[ele.id]) {
+                // we use the current element (restaurant) to get the restaunt id
+                // we then use the restaurant id to access this restaurant's comments
+                // that are in our database by restaurant id
+                var comments = databaseRestaurants[ele.id].comments;
+                ele.comments = comments;
+                // we need to count the number comments in the comments object we use Object.keys
+                // to get the keys as an array so that we can count the keys (number of comments) using .length
+                ele.commentsCount = Object.keys(comments).length;
+              }
+              businessesArray.push(ele);
+            });
+          } else {
+            businessesArray = trueLocations;
+          }
+
+
+
+          // businessesArray = trueLocations;
+          $('#infoDisplay').show();
+          $('#results').empty().append(compileHandlebars('#restaurants-template'));
+          renderResultsMap();
+          listItem();
+          if (window.location.pathname !== '/map') {
+            showList();
+          };
+        });
       }
     });
   });
