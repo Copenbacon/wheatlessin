@@ -2,58 +2,58 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Wheatlessin</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://use.fontawesome.com/2866858701.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link rel="stylesheet" href="style/base.css">
-    <link rel="stylesheet" href="style/layout.css">
-    <link rel="stylesheet" href="style/module.css">
-    <!-- FAVICON TAG -->
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/wheatlessin.ico">
+  <meta charset="utf-8">
+  <title>Wheatlessin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://use.fontawesome.com/2866858701.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="style/layout.css">
+  <link rel="stylesheet" href="style/module.css">
+  <!-- FAVICON TAG -->
+  <link rel="shortcut icon" type="image/x-icon" href="imgs/wheatlessin.ico">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script id="restaurants-template" type="text/x-handlebars-template">
-        <article class="restaurant-display">
-            <img src="{{image_url}}" class="img-thumbnail">
-            <h3><a href="{{url}}">{{name}}</a></h3>
-            <p>{{location.display_address}} </p>
-            <p>{{display_phone}}</p>
-            <h3>Rating: {{rating}}/5</h3>
-            <button class="show-comments btn btn-primary" type="button" data-show-comments="{{id}}">
-              <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-              {{#if commentsCount}}<span class="badge">{{commentsCount}}</span>{{/if}}
-            </button>
-            <button class="add-comment btn btn-primary" type="button" data-add-comment="{{id}}">
-              Add Comment
-            </button>
-            <div id="{{id}}-comment-form" class="comment-form">
-              <form>
-                <div class="form-control">
-                  <input type="text" name="name" id="{{id}}name" placeholder="Your name">
-                </div>
-                <textarea class="form-control" type="text" name="name" id="{{id}}comment" placeholder="Your comment..."></textarea>
-              </form>
-              <button class="comment-button btn btn-primary" data-business-id="{{id}}">Submit Comment</button>
-            </div>
-            <div id="{{id}}-comments" class="comments">
-              {{#each comments}}
-              <div class="comment">
-                <span class="comment-author">By: {{username}}</span>
-                <p class="comment-message">Comment: {{comment}}</p>
-              </div>
-              {{/each}}
-            </div>
+  <!-- Latest compiled and minified JavaScript -->
+  <script id="restaurants-template" type="text/x-handlebars-template">
+    <article class="restaurant-display">
+      <img src="{{image_url}}" class="img-thumbnail">
+      <h3><a href="{{url}}">{{name}}</a></h3>
+      <p>{{location.display_address}} </p>
+      <p>{{display_phone}}</p>
+      <h3>Rating: {{rating}}/5</h3>
+      <button class="show-comments btn btn-primary" type="button" data-show-comments="{{id}}">
+        <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+        {{#if commentsCount}}<span class="badge">{{commentsCount}}</span>{{/if}}
+      </button>
+      <button class="add-comment btn btn-primary" type="button" data-add-comment="{{id}}">
+        Add Comment
+      </button>
+      <div id="{{id}}-comment-form" class="comment-form">
+        <form>
+          <div class="form-control">
+            <input type="text" name="name" id="{{id}}name" placeholder="Your name">
+          </div>
+          <textarea class="form-control" type="text" name="name" id="{{id}}comment" placeholder="Your comment..."></textarea>
+        </form>
+        <button class="comment-button btn btn-primary" data-business-id="{{id}}">Submit Comment</button>
+      </div>
+      <div id="{{id}}-comments" class="comments">
+        {{#each comments}}
+        <div class="comment">
+          <span class="comment-author">By: {{username}}</span>
+          <p class="comment-message">Comment: {{comment}}</p>
+        </div>
+        {{/each}}
+      </div>
 
-        </article>
+    </article>
 
-    </script>
+  </script>
 
-    <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 
 
 
