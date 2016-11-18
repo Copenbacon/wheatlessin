@@ -39,6 +39,14 @@ function listItem() {
       // generate unique comment ID so that we don't try to insert a comment using an ID that already exists
       var newCommentId = firebase.database().ref().child('restaurants').child(restaurantId).child('comments').push().key;
       addComment(restaurantId, userName, comment, newCommentId);
+      jQuery('#' + restaurantId + '-comments').append(renderComment(userName, input));
+      var restaurant = jQuery('#' + restaurantId);
+      var showCommentsButton = restaurant.find('.show-comments');
+      var commentsCount = restaurant.find('.badge').html();
+      commentsCount = commentsCount.length > 0 ? parseInt(commentsCount) + 1 : 1;
+      showCommentsButton.find('.badge').html(commentsCount);
+      restaurant.find('.add-comment').click();
+
       // getComments(restaurantId).then(function(result){
       //   console.log(result.val());
       // })
@@ -48,6 +56,14 @@ function listItem() {
     //   console.log(dataSearch);
     // });
   });
+}
+
+function renderComment(username, comment){
+  var source = $('#comment-template').html();
+  var template = Handlebars.compile(source);
+  var context = {username: username, comment: comment};
+  return template(context);
+
 }
 
 var renderSingleResultMap = function(e) {
