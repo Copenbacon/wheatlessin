@@ -17,8 +17,14 @@
   <link rel="shortcut icon" type="image/x-icon" href="imgs/wheatlessin.ico">
 
   <!-- Latest compiled and minified JavaScript -->
+  <script id="comment-template" type="text/x-handlebars-template">
+    <div class="comment">
+      <span class="comment-author">By: {{username}}</span>
+      <p class="comment-message">Comment: {{comment}}</p>
+    </div>
+  </script>
   <script id="restaurants-template" type="text/x-handlebars-template">
-    <article class="restaurant-display">
+    <article id="{{id}}" class="restaurant-display">
       <img src="{{image_url}}" class="img-thumbnail">
       <h3><a href="{{url}}">{{name}}</a></h3>
       <p>{{location.display_address}} </p>
@@ -26,7 +32,7 @@
       <h3>Rating: {{rating}}/5</h3>
       <button class="show-comments btn btn-primary" type="button" data-show-comments="{{id}}">
         <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-        {{#if commentsCount}}<span class="badge">{{commentsCount}}</span>{{/if}}
+        <span class="badge">{{commentsCount}}</span>
       </button>
       <button class="add-comment btn btn-primary" type="button" data-add-comment="{{id}}">
         Add Comment
@@ -43,8 +49,8 @@
       <div id="{{id}}-comments" class="comments">
         {{#each comments}}
         <div class="comment">
-          <span class="comment-author">By: {{username}}</span>
-          <p class="comment-message">Comment: {{comment}}</p>
+          <span class="comment-author">By: <span class="value">{{username}}</span></span>
+          <p class="comment-message">Comment: <span class="value">{{comment}}</span></p>
         </div>
         {{/each}}
       </div>
